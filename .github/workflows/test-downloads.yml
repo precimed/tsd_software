@@ -1,0 +1,54 @@
+name: Test Binary Downloads
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-downloads:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install Snakemake
+      run: |
+        pip install snakemake
+        
+    - name: Verify Snakefile syntax
+      run: |
+        snakemake --list-rules
+        
+    - name: Dry run workflow
+      run: |
+        snakemake --cores 1 --dry-run
+        
+    - name: Download and unpack binaries
+      run: |
+        make download
+        
+    - name: Verify downloaded binaries
+      run: |
+        ./verify_binaries.sh
+        
+    - name: Check binary versions
+      run: |
+        ./bin/plink1 --version || true
+        ./bin/plink2 --version || true
+        ./bin/regenie --version || true
+        
+    - name: Upload binaries as artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: bioinformatics-binaries
+        path: bin/
+        retention-days: 7
