@@ -1,0 +1,13 @@
+name: tsd_software
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.8
+  - snakemake>=7.0
+  - curl
+  - unzip
+  - pip
+  - pip:
+    - pyyaml

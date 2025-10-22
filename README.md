@@ -4,9 +4,9 @@ Scripts to fetch specific binaries to be synced to TSD's s3-api dir
 ## Overview
 
 This repository contains Snakemake workflows to download and unpack bioinformatics binaries including:
-- **PLINK1** - Whole genome association analysis toolset (version 20231211)
-- **PLINK2** - Next generation of PLINK (version 20240105)
-- **regenie** - Fast whole genome regression modelling (version 3.4.1)
+- **PLINK1** - Whole genome association analysis toolset (version 20250819)
+- **PLINK2** - Next generation of PLINK (version 20251019)
+- **regenie** - Fast whole genome regression modelling (version 4.1)
 
 ## Requirements
 
@@ -17,14 +17,20 @@ This repository contains Snakemake workflows to download and unpack bioinformati
 
 ## Installation
 
-Install Snakemake using pip:
+Install Snakemake using pip in the current Python environment:
 ```bash
 pip install snakemake
 ```
 
-Or using conda:
+Or using conda/mamba:
 ```bash
-conda install -c conda-forge -c bioconda snakemake
+mamba install -c conda-forge -c bioconda snakemake
+```
+
+Or using the provided conda environment file:
+```bash
+mamba env create -f environment.yaml
+mamba activate tsd_software
 ```
 
 ## Usage
