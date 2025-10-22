@@ -49,6 +49,9 @@ check_binary() {
 PASSED=0
 FAILED=0
 
+# Disable exit on error
+set +e
+
 for binary in plink1 plink2 regenie; do
     if check_binary "$binary"; then
         ((PASSED++))
