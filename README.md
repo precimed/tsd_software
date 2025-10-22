@@ -29,8 +29,8 @@ mamba install -c conda-forge -c bioconda snakemake
 
 Or using the provided conda environment file:
 ```bash
-mamba env create -f environment.yaml
-mamba activate tsd_software
+conda env create -f environment.yaml
+conda activate tsd_software
 ```
 
 ## Usage

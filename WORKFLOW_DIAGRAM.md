@@ -17,6 +17,7 @@ tsd_software/
 │   └── regenie.zip
 ├── Snakefile                     # Main workflow definition
 ├── config.yaml                   # Binary configuration (URLs, versions)
+|-- environment.yaml              # conda environment file
 ├── Makefile                      # Convenience interface
 ├── verify_binaries.sh            # Binary verification script
 ├── example_usage.sh              # Usage demonstration
