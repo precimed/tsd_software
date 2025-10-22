@@ -3,6 +3,13 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Downloaded binaries and archives
+bin/
+downloads/
+
+# Snakemake
+.snakemake/
+
 # C extensions
 *.so
 
