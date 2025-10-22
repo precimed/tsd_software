@@ -7,6 +7,9 @@ __pycache__/
 bin/
 downloads/
 
+# Snakemake
+.snakemake/
+
 # C extensions
 *.so
 
