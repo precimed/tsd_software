@@ -1,0 +1,21 @@
+# Configuration file for bioinformatics binaries
+# Defines download URLs and versions for each tool
+
+binaries:
+  plink1:
+    version: "20231211"
+    url: "https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20231211.zip"
+    executable: "plink"
+    description: "PLINK 1.9 - Whole genome association analysis toolset"
+  
+  plink2:
+    version: "20240105"
+    url: "https://s3.amazonaws.com/plink2-assets/alpha5/plink2_linux_x86_64_20240105.zip"
+    executable: "plink2"
+    description: "PLINK 2.0 - Next generation of PLINK"
+  
+  regenie:
+    version: "3.4.1"
+    url: "https://github.com/rgcgithub/regenie/releases/download/v3.4.1/regenie_v3.4.1.gz_x86_64_Linux.zip"
+    executable: "regenie_v3.4.1.gz_x86_64_Linux"
+    description: "regenie - Fast whole genome regression modelling"
